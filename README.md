@@ -2,16 +2,36 @@
 
 Official website project for author Jennifer Lopez Santiago.
 
-This repository will house the source code, content structure, and design assets for Jennifer Lopez Santiago's author website. The site will be built to introduce her work, share updates with readers, highlight books and writing projects, and provide a polished place for visitors to learn more about the author.
+This repository houses the first pass for Jennifer Lopez Santiago's author
+website. The site introduces her work, highlights the upcoming book, and
+creates expandable sections for essays, travel writing, reflective posts,
+speaking updates, social links, videos, and reader contact.
 
-## Planned Website Sections
+## Sections
 
-- Author biography
-- Featured books and writing projects
-- News, events, and announcements
-- Reader contact or newsletter signup
-- Media kit and professional inquiries
+- About Me
+- Books
+- The Process
+- Wanderings
+- La Que Sabe
+- Speaking
+- Connect
 
-## Project Status
+## Local Preview
 
-This project is just getting started. The first milestone is to define the website structure, visual direction, and core content for Jennifer Lopez Santiago's online author presence.
+Run a local server from this folder:
+
+```bash
+python -m http.server 4030
+```
+
+Then open:
+
+```text
+http://localhost:4030
+```
+
+## Easy Content Updates
+
+Editable links, videos, future products, and Wanderings posts live in
+`site-content.js`.
