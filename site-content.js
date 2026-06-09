@@ -1,4 +1,4 @@
-window.siteContent = {
+export const siteContent = {
   contactEmail: "hello@example.com",
   socials: [
     { label: "Instagram", url: "#", icon: "IG" },

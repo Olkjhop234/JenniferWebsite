@@ -19,10 +19,16 @@ speaking updates, social links, videos, and reader contact.
 
 ## Local Preview
 
-Run a local server from this folder:
+Install dependencies:
 
 ```bash
-python -m http.server 4030
+npm install
+```
+
+Run a local development server from this folder:
+
+```bash
+npm run dev -- --port 4030
 ```
 
 Then open:

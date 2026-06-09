@@ -1,3 +1,5 @@
+import { siteContent } from "./site-content.js";
+
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const productGrid = document.querySelector("#product-grid");
@@ -22,7 +24,7 @@ siteNav.addEventListener("click", (event) => {
 });
 
 function renderProducts() {
-  productGrid.innerHTML = window.siteContent.products
+  productGrid.innerHTML = siteContent.products
     .map(
       (product) => `
         <article class="product-card">
@@ -36,7 +38,7 @@ function renderProducts() {
 }
 
 function renderWanderings() {
-  wanderingsGrid.innerHTML = window.siteContent.wanderings
+  wanderingsGrid.innerHTML = siteContent.wanderings
     .map(
       (post, index) => `
         <button class="catalog-card" type="button" data-index="${index}">
@@ -50,7 +52,7 @@ function renderWanderings() {
 
   wanderingsGrid.querySelectorAll(".catalog-card").forEach((card) => {
     card.addEventListener("click", () => {
-      const post = window.siteContent.wanderings[Number(card.dataset.index)];
+      const post = siteContent.wanderings[Number(card.dataset.index)];
       document.querySelector("#story-image").src = post.image;
       document.querySelector("#story-image").alt = post.title;
       document.querySelector("#story-meta").textContent = post.location;
@@ -62,7 +64,7 @@ function renderWanderings() {
 }
 
 function renderSocials() {
-  socialLinks.innerHTML = window.siteContent.socials
+  socialLinks.innerHTML = siteContent.socials
     .map(
       (social) => `
         <a href="${social.url}" aria-label="${social.label}">
@@ -75,7 +77,7 @@ function renderSocials() {
 }
 
 function renderVideos() {
-  videoGrid.innerHTML = window.siteContent.videos
+  videoGrid.innerHTML = siteContent.videos
     .map((video) => {
       const media = video.embedUrl
         ? `<iframe src="${video.embedUrl}" title="${video.title}" allowfullscreen></iframe>`
@@ -107,7 +109,7 @@ contactForm.addEventListener("submit", (event) => {
   const body = encodeURIComponent(
     `Name: ${formData.get("name")}\nEmail: ${formData.get("email")}\n\n${formData.get("message")}`
   );
-  window.location.href = `mailto:${window.siteContent.contactEmail}?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:${siteContent.contactEmail}?subject=${subject}&body=${body}`;
 });
 
 renderProducts();
